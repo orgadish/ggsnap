@@ -13,6 +13,9 @@ knitr::opts_chunk$set(
 
 # ggsnap
 
+[![CRAN status](https://www.r-pkg.org/badges/version/ggsnap)](https://cran.r-project.org/package=ggsnap)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/ggsnap)](https://cran.r-project.org/package=ggsnap)
+
 Save a ggplot2 plot using `+` instead of breaking out of the pipe for a separate `ggsave()` call.
 
 ```{r, eval = FALSE}
