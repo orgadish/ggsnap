@@ -1,8 +1,8 @@
 Package: ggsnap
-Title: Save a ggplot2 plot using `+` operator
-Version: 0.1.0
+Title: Save a 'ggplot2' Plot using '+' Operator
+Version: 0.1.1
 Authors@R: person("Or", "Gadish", email = "orgadish@gmail.com", role = c("aut", "cre", "cph"))
-Description: Provides ggsnap(), which saves a ggplot2 plot to disk in a '+' 
+Description: Provides ggsnap(), which saves a 'ggplot2' plot to disk in a '+' 
   chain, acting as a thin, chainable wrapper around ggplot2::ggsave(). Can be
   called multiple times in a chain to save different snapshots.
 License: MIT + file LICENSE
