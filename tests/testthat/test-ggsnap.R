@@ -11,7 +11,7 @@ test_that("ggsave_snap() is identical to ggsnap()", {
 
 test_that("ggsnap() errors if plot is passed via ...", {
   expect_error(
-    ggsnap("file.png", plot = base_plot()),
+    ggsnap(tmp_png(), plot = base_plot()),
     "`plot` cannot be passed"
   )
 })
@@ -30,9 +30,10 @@ test_that("ggsnap forwards filename, plot, and all named arguments to ggsave", {
   )
 
   p <- base_plot()
-  p + ggsnap("file.png", width = 6, height = 4, units = "cm", dpi = 150)
+  filename <- tmp_png()
+  p + ggsnap(filename, width = 6, height = 4, units = "cm", dpi = 150)
 
-  expect_equal(captured$filename, "file.png")
+  expect_equal(captured$filename, filename)
   expect_equal(captured$width,  6)
   expect_equal(captured$height, 4)
   expect_equal(captured$units,  "cm")
@@ -50,13 +51,13 @@ test_that("ggsnap forwards arbitrary extra arguments via ... to ggsave", {
 
   base_plot() +
     ggsnap(
-      "file.png",
-      device = "png", path = "/tmp", scale = 2,
+      basename(tmp_png()),
+      device = "png", path = tempdir(), scale = 2,
       limitsize = FALSE, bg = "white"
     )
 
   expect_equal(captured$device,    "png")
-  expect_equal(captured$path,      "/tmp")
+  expect_equal(captured$path,      tempdir())
   expect_equal(captured$scale,     2)
   expect_equal(captured$limitsize, FALSE)
   expect_equal(captured$bg,        "white")

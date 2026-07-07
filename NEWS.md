@@ -1,7 +1,3 @@
-# ggsnap 0.1.1
+# ggsnap 0.1.0 - 0.1.2
 
-* CRAN re-submission.
-
-# ggsnap 0.1.0
-
-* Initial CRAN submission.
+* Initial CRAN submissions.

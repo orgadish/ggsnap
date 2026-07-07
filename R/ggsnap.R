@@ -20,22 +20,25 @@
 #' @return The ggplot object, invisibly.
 #'
 #' @examples
-#' \dontrun{
-#' # Single use
-#' mtcars |>
-#'   ggplot(aes(mpg, wt)) +
-#'   geom_point() +
-#'   ggsnap("mygraph.png", width = 6, height = 4)
+#' library(ggplot2)
 #'
-#' # Two snapshots capturing before and after changing the theme.
-#' mtcars |>
-#'   ggplot(aes(mpg, wt)) +
+#' save_dir <- tempdir()
+#'
+#' # Single use
+#' ggplot(mtcars) +
+#'   aes(mpg, wt) +
 #'   geom_point() +
 #'   labs(title = "Cars") +
-#'   ggsnap("base.png") +
+#'   ggsnap(file.path(save_dir, "cars.png"), width = 6, height = 4)
+#'
+#' # Two snapshots capturing before and after changing the theme
+#' ggplot(mtcars) +
+#'   aes(mpg, wt) +
+#'   geom_point() +
+#'   labs(title = "Cars") +
+#'   ggsnap(file.path(save_dir, "base.png")) +
 #'   theme_minimal() +
-#'   ggsnap("minimal.png")
-#' }
+#'   ggsnap(file.path(save_dir, "minimal.png"))
 #'
 #' @export
 ggsnap <- function(
