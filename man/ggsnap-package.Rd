@@ -3,9 +3,9 @@
 \docType{package}
 \name{ggsnap-package}
 \alias{ggsnap-package}
-\title{ggsnap: Save a ggplot2 plot using `+` operator.}
+\title{ggsnap: Save a 'ggplot2' Plot using '+' Operator}
 \description{
-Provides ggsnap(), which saves a ggplot2 plot to disk in a '+' chain, acting as a thin, chainable wrapper around ggplot2::ggsave().
+Provides ggsnap(), which saves a 'ggplot2' plot to disk in a '+' chain, acting as a thin, chainable wrapper around ggplot2::ggsave(). Can be called multiple times in a chain to save different snapshots.
 }
 \author{
 \strong{Maintainer}: Or Gadish \email{orgadish@gmail.com} [copyright holder]
